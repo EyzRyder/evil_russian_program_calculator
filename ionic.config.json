@@ -1,0 +1,7 @@
+{
+  "name": "evilrussion",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
