@@ -1,0 +1,6 @@
+.custumInput{
+  --highlight-color:var(--ion-color-tertiary);
+  &:focus{
+    --border-color:var(--ion-color-tertiary);
+  }
+}
