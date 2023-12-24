@@ -1,45 +1,45 @@
-<div class="sm:px-6 w-full">
+<div class="sm:px-6 w-full ">
 
-  <div class="bg-light-tint dark:bg-light-tint py-4 md:py-7 px-4 md:px-8 xl:px-10">
-<h1 class="text-dark-base">Week 01</h1>
+  <div class="bg-light-tint rounded-md py-4 md:py-7 px-4 md:px-8 xl:px-10">
+<h1 class="text-dark-base">Week 0{{curWeek}} - {{curMax}} = 100%</h1>
     <div class="mt-7 overflow-x-auto">
       <table class="w-full whitespace-nowrap">
         <th>
           <tr class="grid grid-cols-4 text-tertiary-base">
             <td>
-              Dia
+              Day
             </td>
             <td>
-              Quantidade
+              Quantity
             </td>
             <td>
-              Porcento
+              Percent
             </td>
             <td>
-              Tempo
+              Time
             </td>
           </tr>
         </th>
         <tbody>
-          <tr class="h-16 border border-gray-100 rounded grid grid-cols-4 items-center">
+          <tr *ngFor="let item of workoutProgramList" class="h-16 border border-gray-100 rounded grid grid-cols-4 items-center">
             <td class="flex items-center justify-center">
                 <p class="text-base font-medium leading-none text-gray-700 dark:text-gray-100 mr-2">
-                  Day 1
+                  Day {{item.day}}
                 </p>
             </td>
             <td class="flex items-center justify-center">
                 <p class="text-base font-medium leading-none text-gray-700 dark:text-gray-100 mr-2">
-                  55
+                  {{item.quantity}}
                 </p>
             </td>
             <td class="flex items-center justify-center">
                 <p class="text-base font-medium leading-none text-gray-700 dark:text-gray-100 mr-2">
-                  30%
+                  {{item.percent}}%
                 </p>
             </td>
             <td class="flex items-center justify-center">
                 <p class="text-base font-medium leading-none text-gray-700 dark:text-gray-100 mr-2">
-                  60m
+                  {{item.minutes}}m
                 </p>
             </td>
           </tr>
