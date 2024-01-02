@@ -5,7 +5,9 @@ import { FormsModule } from '@angular/forms';
 import { HomePage } from './home.page';
 
 import { HomePageRoutingModule } from './home-routing.module';
+import { DashComponent } from '../components/dash/dash.component';
 import { WeekTableComponent } from '../components/week-table/week-table.component';
+import { FormComponent } from '../components/form/form.component';
 
 
 @NgModule({
@@ -14,7 +16,8 @@ import { WeekTableComponent } from '../components/week-table/week-table.componen
     FormsModule,
     IonicModule,
     HomePageRoutingModule,
+
   ],
-  declarations: [HomePage, WeekTableComponent]
+  declarations: [HomePage, DashComponent,WeekTableComponent,FormComponent]
 })
 export class HomePageModule {}

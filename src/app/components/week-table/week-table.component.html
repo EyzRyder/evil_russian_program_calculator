@@ -2,11 +2,11 @@
 
   <div class="bg-light-tint rounded-md py-4 md:py-7 px-4 md:px-8 xl:px-10">
     <div class="flex justify-between items-center max-lg:flex-col">
-      <h1 class="text-dark-base ">Week 0{{curWeek}} </h1>
-      <span>{{curMax}} = 100%</span>
+      <h1 class="text-dark-base ">Week 0{{this.statsService.curWeek}} </h1>
+      <span>{{this.statsService.maxPushUps}} = 100%</span>
     </div>
-    <div class="mt-7 overflow-x-auto">
-      <table class="w-full whitespace-nowrap">
+    <div class="mt-7 overflow-x-auto" *ngIf="this.statsService.openTable">
+      <table class="w-full whitespace-nowrap" >
         <th>
           <tr class="grid grid-cols-4 text-tertiary-base">
             <td>
@@ -24,7 +24,7 @@
           </tr>
         </th>
         <tbody>
-          <tr *ngFor="let item of workoutProgramList"
+          <tr *ngFor="let item of this.statsService.workoutProgramList"
             class="h-16 border border-gray-100 rounded grid grid-cols-4 items-center">
             <td class="flex items-center justify-center">
               <p class="text-base font-medium leading-none text-gray-700 dark:text-gray-100 mr-2">
