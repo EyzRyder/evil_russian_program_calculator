@@ -1,4 +1,4 @@
-import { Injectable, OnChanges } from '@angular/core';
+import { Injectable } from '@angular/core';
 
 type TWeek = {
   percent: number
