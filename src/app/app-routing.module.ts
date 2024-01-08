@@ -19,6 +19,14 @@ const routes: Routes = [
     path: 'confg',
     loadChildren: () => import('./pages/confg/confg.module').then( m => m.ConfgPageModule)
   },
+  {
+    path: 'table',
+    loadChildren: () => import('./pages/table/table.module').then( m => m.TablePageModule)
+  },
+  {
+    path: 'calc',
+    loadChildren: () => import('./pages/calc/calc.module').then( m => m.CalcPageModule)
+  },
 ];
 
 @NgModule({

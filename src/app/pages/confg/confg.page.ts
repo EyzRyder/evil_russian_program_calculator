@@ -12,7 +12,11 @@ export class ConfgPage {
     public statsService:StatsService,
     private storageService:StorageService,
     private router:Router
-  ){}
+  ){
+if(this.statsService.user.name.length<1){
+  this.router.navigateByUrl('/');
+}
+  }
   logOut(){
     this.storageService.deleteStorage("user").then(()=>{
       this.statsService.deleteUser();

@@ -23,7 +23,7 @@ export class IntroComponent {
     if (!name) return;
     const data = this.statsService.createUser({
       name,
-      curWeek: 1,
+      curWeek: '1',
       maxPushUps: 0,
       workoutProgramList: []
     });

@@ -1,7 +1,7 @@
 export interface IUser {
   name: string
   maxPushUps: number
-  curWeek: 1 | 2
+  curWeek: '1' | '2'
   workoutProgramList: TWorkoutProgrameData[]
 }
 

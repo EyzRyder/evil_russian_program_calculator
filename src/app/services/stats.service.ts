@@ -7,7 +7,7 @@ import { TWeek, IUser } from '../models/iUser';
 export class StatsService {
   user: IUser = {
     name: "",
-    curWeek: 1,
+    curWeek: '1',
     maxPushUps: 0,
     workoutProgramList: []
   };
@@ -39,7 +39,7 @@ export class StatsService {
     this.user.workoutProgramList = [];
     for (let i = 0; i < 7; i++) {
 
-      if (this.user.curWeek == 1) {
+      if (this.user.curWeek === '1') {
         this.user.workoutProgramList.push(
           {
             day: i + 1,
@@ -50,7 +50,7 @@ export class StatsService {
         )
       }
 
-      if (this.user.curWeek == 2) {
+      if (this.user.curWeek === '2') {
         this.user.workoutProgramList.push(
           {
             day: i + 1,
@@ -71,7 +71,7 @@ export class StatsService {
   deleteUser(){
     this.createUser( {
       name: "",
-      curWeek: 1,
+      curWeek: '1',
       maxPushUps: 0,
       workoutProgramList: []
     })
