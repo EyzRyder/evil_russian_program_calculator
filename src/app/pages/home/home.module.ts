@@ -1,14 +1,11 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { IonicModule } from '@ionic/angular';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HomePage } from './home.page';
 
 import { HomePageRoutingModule } from './home-routing.module';
-import { DashComponent } from '../components/dash/dash.component';
-import { WeekTableComponent } from '../components/week-table/week-table.component';
-import { FormComponent } from '../components/form/form.component';
-
+import { ComponentsModule } from '../../components/components.module';
 
 @NgModule({
   imports: [
@@ -16,8 +13,9 @@ import { FormComponent } from '../components/form/form.component';
     FormsModule,
     IonicModule,
     HomePageRoutingModule,
-
+    ReactiveFormsModule,
+    ComponentsModule
   ],
-  declarations: [HomePage, DashComponent,WeekTableComponent,FormComponent]
+  declarations: [HomePage]
 })
 export class HomePageModule {}

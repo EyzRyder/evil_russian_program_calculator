@@ -51,6 +51,10 @@ module.exports = {
           shade:"var(--ion-color-light-shade)",
           tint:"var(--ion-color-light-tint)",
         },
+
+      },
+      backgroundImage:{
+        metal:"url('./../assets/img/metal.jpg')",
       }
     },
   },

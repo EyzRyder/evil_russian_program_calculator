@@ -1,28 +1,20 @@
 import { Injectable } from '@angular/core';
-
-type TWeek = {
-  percent: number
-  minutes: number
-}
-
-type TWorkoutProgrameData = {
-  day: number,
-  quantity: number,
-  percent: number,
-  minutes: number
-}
-
+import { TWeek, IUser } from '../models/iUser';
 
 @Injectable({
   providedIn: 'root'
 })
 export class StatsService {
-  name: string = '';
-  maxPushUps: number = 0;
-  curWeek: 1 | 2 = 1;
+  user: IUser = {
+    name: "",
+    curWeek: 1,
+    maxPushUps: 0,
+    workoutProgramList: []
+  };
+
   openTable: boolean = false;
 
-  weekOne: TWeek[] = [
+  readonly weekOne: TWeek[] = [
     { percent: 30, minutes: 60 },
     { percent: 50, minutes: 60 },
     { percent: 60, minutes: 45 },
@@ -31,7 +23,8 @@ export class StatsService {
     { percent: 40, minutes: 60 },
     { percent: 20, minutes: 90 },
   ];
-  weekTwo: TWeek[] = [
+
+  readonly weekTwo: TWeek[] = [
     { percent: 35, minutes: 45 },
     { percent: 55, minutes: 20 },
     { percent: 30, minutes: 15 },
@@ -41,34 +34,46 @@ export class StatsService {
     { percent: 25, minutes: 120 },
   ];
 
-  workoutProgramList: TWorkoutProgrameData[] = [];
-
   calculaTable() {
-    this.workoutProgramList = [];
+    if (!this.user) return
+    this.user.workoutProgramList = [];
     for (let i = 0; i < 7; i++) {
 
-      if (this.curWeek == 1) {
-        this.workoutProgramList.push(
+      if (this.user.curWeek == 1) {
+        this.user.workoutProgramList.push(
           {
             day: i + 1,
             minutes: this.weekOne[i].minutes,
             percent: this.weekOne[i].percent,
-            quantity: Math.round(this.maxPushUps * (this.weekOne[i].percent / 100))
+            quantity: Math.round(this.user.maxPushUps * (this.weekOne[i].percent / 100))
           }
         )
       }
 
-      if (this.curWeek == 2) {
-        this.workoutProgramList.push(
+      if (this.user.curWeek == 2) {
+        this.user.workoutProgramList.push(
           {
             day: i + 1,
             minutes: this.weekTwo[i].minutes,
             percent: this.weekTwo[i].percent,
-            quantity: Math.round(this.maxPushUps * (this.weekTwo[i].percent / 100))
+            quantity: Math.round(this.user.maxPushUps * (this.weekTwo[i].percent / 100))
           }
         )
       }
     }
   }
 
+  createUser(data: IUser) {
+    this.user = data;
+    return this.user
+  }
+
+  deleteUser(){
+    this.createUser( {
+      name: "",
+      curWeek: 1,
+      maxPushUps: 0,
+      workoutProgramList: []
+    })
+  }
 }

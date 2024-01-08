@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
 import { Storage } from '@ionic/storage-angular';
 
+
+
 @Injectable({
   providedIn: 'root'
 })
@@ -10,28 +12,32 @@ export class StorageService {
     this.init();
   }
 
-  addStorage(key:string, value:string) {
+  addStorage<T>(key:string, value:T) {
     this.storage.set(key, value);
   }
 
-  updateStorage(key:string, newValue:string) {
+  updateStorage<T>(key:string, newValue:T) {
     this.storage.set(key, newValue);
     this.getAllStorages();
   }
 
-  deleteStorage(key:string) {
-    this.storage.remove(key);
+  deleteStorage(key:string):Promise<void> {
+   return this.storage.remove(key);
   }
 
   getAllStorages() {
-    const storages: any = [];
-    this.storage.forEach((key, value, index) => {
+    const storages: any[]= [];
+    this.storage.forEach((key, value) => {
       storages.push({ 'key': value, 'value': key })
     });
     return storages;
   }
 
-  async init() {
+  getFromStorage<T>(key:string):Promise<T>{
+    return this.storage.get(key);
+  }
+
+  private async init() {
     await this.storage.create();
   }
 }

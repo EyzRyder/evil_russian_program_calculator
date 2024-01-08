@@ -1,4 +1,7 @@
 import { Component } from '@angular/core';
+import { StorageService } from './services/storage.service';
+import { StatsService } from './services/stats.service';
+import { IUser } from './models/iUser';
 
 @Component({
   selector: 'app-root',
@@ -6,4 +9,20 @@ import { Component } from '@angular/core';
   styleUrls: ['app.component.scss'],
 })
 export class AppComponent {
+  constructor(
+    public storageService: StorageService,
+    public statsService: StatsService
+  ) {
+    this.getUserData();
+  }
+
+  getUserData() {
+    this.storageService.getFromStorage<IUser>("user")
+      .then(res => {
+        if (res) {
+          this.statsService.createUser(res)
+        };
+      });
+  }
+
 }

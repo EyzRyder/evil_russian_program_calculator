@@ -1,0 +1,20 @@
+<div class="flex flex-wrap self-center justify-self-center items-center justify-center gap-8 h-full">
+  <div class="grid gap-4 max-w-[40ch]">
+    <h1 class="text-lg">
+      Take Control of <span className="text-primary-base">Your Arms</span>
+    </h1>
+    <p>
+      Personal budgeting is the secret to financial Freedom. start your journey today.
+    </p>
+    <form [formGroup]="profileForm" (ngSubmit)="login()" class="grid gap-8 place-items-start w-full">
+      <input type="text" name="userName" placeholder="What is your name" aria-label="your name"
+        autoComplete="given-name" formControlName="userName" required class="bg-dark-base/50 p-2 rounded-md"/>
+      <button type="submit" [disabled]="!profileForm.valid" class="bg-primary-base rounded-md px-3 py-2">
+        <span>Create Account</span>
+      </button>
+    </form>
+  </div>
+  <div class="block p-2 rounded-md dark:bg-dark-base">
+    <img src="assets/svgs/logo.svg" alt="evil Russian workout" />
+  </div>
+</div>

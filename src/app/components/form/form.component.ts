@@ -7,7 +7,7 @@ import { StatsService } from 'src/app/services/stats.service';
   templateUrl: './form.component.html',
 })
 export class FormComponent implements OnChanges {
-  
+
   constructor(
     public toastController: ToastController,
     public statsService: StatsService
@@ -18,11 +18,11 @@ export class FormComponent implements OnChanges {
   }
 
   calculate() {
-    if (this.statsService.maxPushUps < 1) {
+    if (this.statsService.user.maxPushUps < 1) {
       this.presentToast('Please input a valid value', 'danger');
       return;
     }
-    if (!(this.statsService.curWeek == 1 || this.statsService.curWeek == 2)) {
+    if (!(this.statsService.user.curWeek == 1 || this.statsService.user.curWeek == 2)) {
       this.presentToast('Please input a valid value', 'danger');
       return;
     }

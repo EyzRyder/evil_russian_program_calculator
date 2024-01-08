@@ -1,3 +1,21 @@
-<p>
-  navbar works!
-</p>
+<nav class="flex justify-center items-center w-full my-10">
+  <ul class="flex flex-row gap-4 bg-white/50 rounded-md border-primary-base px-4 py-3">
+    <li class="hover:font-medium hover:border-b">
+      <a href="javascript:;" [routerLink]="['/']">
+        Home
+      </a>
+    </li>
+    <li class="hover:font-medium hover:border-b">
+      <a href="javascript:;" [routerLink]="['/about']">
+        About
+      </a>
+    </li>
+    <li class="hover:font-medium hover:border-b">
+      <a href="javascript:;" [routerLink]="['/confg']">
+        Configuration
+      </a>
+    </li>
+  </ul>
+</nav>
+
+

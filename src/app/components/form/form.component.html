@@ -11,12 +11,12 @@
       Insert your max of push-ups
     </p>
     <ion-input class="custumInput border-tertiary-base" color="tertiary" labelPlacement="floating"
-      label="Input your max" type="number" fill="outline" [(ngModel)]="this.statsService.maxPushUps">
+      label="Input your max" type="number" fill="outline" [(ngModel)]="this.statsService.user.maxPushUps">
     </ion-input>
     <p class="text-base text-gray-500">
       What week of training are you?
     </p>
-    <ion-radio-group [(ngModel)]="this.statsService.curWeek">
+    <ion-radio-group [(ngModel)]="this.statsService.user.curWeek">
       <ion-radio color="tertiary" value={{1}}>First Week</ion-radio><br />
       <ion-radio color="tertiary" value={{2}}>Second Week</ion-radio><br />
     </ion-radio-group>
