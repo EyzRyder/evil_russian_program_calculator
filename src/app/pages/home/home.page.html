@@ -1,57 +1,58 @@
-<ion-content
-  [fullscreen]="true"
-  >
-  <app-intro
-    *ngIf="this.statsService.user.name.length<1"
-    >
+<ion-content [fullscreen]="true">
+  <app-intro *ngIf="this.statsService.user.name.length<1">
   </app-intro>
 
-    <div
-      *ngIf="this.statsService.user.name.length>0"
-      class="w-full flex flex-col items-center"
-      >
-      <app-navbar></app-navbar>
-      <h1>
-        Little bit about the Russian push-up programe
-      </h1>
-  <div
-    class="flex flex-row gap-4"
-    >
+  <div *ngIf="this.statsService.user.name.length>0" class="w-full flex flex-col
+    items-center">
+    <div class="w-full flex flex-col justify-center items-center gap-6">
+      <div class=" relative p-2 rounded-b-2xl before:absolute before:content-['']
+        before:top-0 before:right-0 before:bg-metal before:bg-cover before:w-full
+        before:h-full before:-z-10 before:opacity-60 before:rounded-md flex justify-center
+        h-[300px] w-full max-w-[900px]
+        ">
+        <img src="assets/svgs/logo.svg" alt="evil Russian workout" class=" h-full w-[360px]" />
+      </div>
+      <div class="max-w-[900px] flex flex-col gap-4 px-8 pb-10">
+        <h1 class="text-2xl font-bold w-full text-center">
+          Little bit about the Russian push-up programe
+        </h1>
+        <p>
+          If you're looking for a way to spice up your push-up routine and challenge your upper body and core, you might
+          want to try the Russian pushup program. This is a three-week program that involves doing a certain number of
+          push-ups every day, based on a percentage of your maximum reps. The push-ups are not the regular kind, though.
+          They are a variation that combines a standard push-up and a forearm plank, which makes them harder and more
+          effective.
+        </p>
+        <p>
+          To do a Russian push-up, you start in a plank position with your hands just wider than your shoulders. Then
+          you lower your body to the ground, keeping your elbows close to your sides and your back straight. When you
+          reach the bottom of the push-up, you quickly shift back into a forearm plank, with your elbows under your
+          shoulders and your body in a straight line. Then you shift forward again to the low push-up position, and
+          press yourself back up to the plank position. That's one rep.
+        </p>
+        <p>
+          The Russian pushup program has different levels of intensity and frequency for each day of the week. You can
+          find the details of the program online, but here's an example of what it looks like:
+        </p>
+        <p>
+          On Mondays, you do as many push-ups as you can in one set, and that's your base number. Then you calculate the
+          percentage of that number for each day, and that's how many push-ups you do every hour or every few minutes,
+          depending on the set frequency. For example, if your base number is 40, and the relative intensity is 30%,
+          then you do 12 push-ups every hour on Monday.
+        </p>
+        <p>
+          The Russian pushup program is not for beginners, so make sure you have some experience with regular push-ups
+          before you try it. It's also important to warm up before each session, and rest when you need to. If you
+          follow the program correctly, you should see some impressive results in your strength, endurance, and muscle
+          tone.
 
-    <div
-      class="block relative p-2 rounded-md before:absolute before:content-[''] before:top-0 before:right-0 before:bg-metal before:bg-cover before:w-full before:h-full before:-z-10 before:opacity-60 w-full h-full before:rounded-md"
-      >
-      <img
-      src="assets/svgs/logo.svg"
-      alt="evil Russian workout"
-      class="w-full h-full" />
-    </div>
-    <div
-      class="max-w-[70em] flex flex-col gap-2">
-      <p>
-      If you're looking for a way to spice up your push-up routine and challenge your upper body and core, you might want to try the Russian pushup program. This is a three-week program that involves doing a certain number of push-ups every day, based on a percentage of your maximum reps. The push-ups are not the regular kind, though. They are a variation that combines a standard push-up and a forearm plank, which makes them harder and more effective.
-      </p>
-      <p>
-      To do a Russian push-up, you start in a plank position with your hands just wider than your shoulders. Then you lower your body to the ground, keeping your elbows close to your sides and your back straight. When you reach the bottom of the push-up, you quickly shift back into a forearm plank, with your elbows under your shoulders and your body in a straight line. Then you shift forward again to the low push-up position, and press yourself back up to the plank position. That's one rep.
-      </p>
-      <p>
-      The Russian pushup program has different levels of intensity and frequency for each day of the week. You can find the details of the program online, but here's an example of what it looks like:
-      </p>
-      <p>
-      On Mondays, you do as many push-ups as you can in one set, and that's your base number. Then you calculate the percentage of that number for each day, and that's how many push-ups you do every hour or every few minutes, depending on the set frequency. For example, if your base number is 40, and the relative intensity is 30%, then you do 12 push-ups every hour on Monday.
-      </p>
-      <p>
-      The Russian pushup program is not for beginners, so make sure you have some experience with regular push-ups before you try it. It's also important to warm up before each session, and rest when you need to. If you follow the program correctly, you should see some impressive results in your strength, endurance, and muscle tone.
-
-      </p>
-      <button
-        type="button"
-        [routerLink]="['/calc']"
-        class="bg-primary-base px-2 py-4 rounded-md"
-        >
-        Calculate Your routine now
-      </button>
+        </p>
+        <button type="button" [routerLink]="['/calc']" class="bg-primary-base px-2 py-4 rounded-md">
+          Calculate your routine now
+        </button>
+      </div>
     </div>
   </div>
-    </div>
+
+  <app-navbar *ngIf="this.statsService.user.name.length>0"></app-navbar>
 </ion-content>

@@ -1,33 +1,19 @@
-<nav
-  class="flex justify-center items-center w-full my-10"
-  >
-  <ul
-    class="flex flex-row gap-4 bg-white/50 rounded-md border-primary-base px-4 py-3"
-    >
-    <li
-      class="hover:font-medium hover:border-b-4 h-6 hover:border-b-primary-base hover:cursor-pointer"
-      [routerLink]="['/']"
-      >
-      Home
-    </li>
-      <li
-      class="hover:font-medium hover:border-b-4 h-6 hover:border-b-primary-base hover:cursor-pointer"
-        [routerLink]="['/calc']"
-        >
-        Form
-      </li>
-        <li
-      class="hover:font-medium hover:border-b-4 h-6 hover:border-b-primary-base hover:cursor-pointer"
-          [routerLink]="['/table']"
-          >
-          Table
-        </li>
-          <li
-      class="hover:font-medium hover:border-b-4 h-6 hover:border-b-primary-base hover:cursor-pointer"
-            [routerLink]="['/confg']"
-            >
-            User
-          </li>
-  </ul>
-</nav>
-
+<ion-fab slot="fixed" vertical="bottom" horizontal="end" class="fixed" >
+  <ion-fab-button>
+    <ion-icon name="chevron-up-circle"></ion-icon>
+  </ion-fab-button>
+  <ion-fab-list side="top" class="mb-20">
+    <ion-fab-button [routerLink]="['/']">
+      <img src="assets/icon/favicon.svg" class="w-5 h-5" />
+    </ion-fab-button>
+    <ion-fab-button [routerLink]="['/calc']">
+      <ion-icon name="calculator-outline"></ion-icon>
+    </ion-fab-button>
+    <ion-fab-button [routerLink]="['/table']">
+      <ion-icon name="calendar-outline"></ion-icon>
+    </ion-fab-button>
+    <ion-fab-button [routerLink]="['/confg']">
+      <ion-icon name="cog-outline"></ion-icon>
+    </ion-fab-button>
+  </ion-fab-list>
+</ion-fab>

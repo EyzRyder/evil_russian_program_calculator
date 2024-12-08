@@ -4,35 +4,40 @@ import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 const routes: Routes = [
   {
     path: 'home',
-    loadChildren: () => import('./pages/home/home.module').then( m => m.HomePageModule)
+    loadChildren: () =>
+      import('./pages/home/home.module').then((m) => m.HomePageModule),
   },
   {
     path: '',
     redirectTo: 'home',
-    pathMatch: 'full'
+    pathMatch: 'full',
   },
   {
     path: 'about',
-    loadChildren: () => import('./pages/about/about.module').then( m => m.AboutPageModule)
+    loadChildren: () =>
+      import('./pages/about/about.module').then((m) => m.AboutPageModule),
   },
   {
     path: 'confg',
-    loadChildren: () => import('./pages/confg/confg.module').then( m => m.ConfgPageModule)
+    loadChildren: () =>
+      import('./pages/confg/confg.module').then((m) => m.ConfgPageModule),
   },
   {
     path: 'table',
-    loadChildren: () => import('./pages/table/table.module').then( m => m.TablePageModule)
+    loadChildren: () =>
+      import('./pages/table/table.module').then((m) => m.TablePageModule),
   },
   {
     path: 'calc',
-    loadChildren: () => import('./pages/calc/calc.module').then( m => m.CalcPageModule)
+    loadChildren: () =>
+      import('./pages/calc/calc.module').then((m) => m.CalcPageModule),
   },
 ];
 
 @NgModule({
   imports: [
-    RouterModule.forRoot(routes, { preloadingStrategy: PreloadAllModules })
+    RouterModule.forRoot(routes, { preloadingStrategy: PreloadAllModules }),
   ],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

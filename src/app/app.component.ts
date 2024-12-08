@@ -11,18 +11,16 @@ import { IUser } from './models/iUser';
 export class AppComponent {
   constructor(
     public storageService: StorageService,
-    public statsService: StatsService
+    public statsService: StatsService,
   ) {
     this.getUserData();
   }
 
   getUserData() {
-    this.storageService.getFromStorage<IUser>("user")
-      .then(res => {
-        if (res) {
-          this.statsService.createUser(res)
-        };
-      });
+    this.storageService.getFromStorage<IUser>('user').then((res) => {
+      if (res) {
+        this.statsService.createUser(res);
+      }
+    });
   }
-
 }

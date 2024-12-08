@@ -1,12 +1,9 @@
-import { CapacitorConfig } from '@capacitor/cli';
+import type { CapacitorConfig } from '@capacitor/cli';
 
 const config: CapacitorConfig = {
-  appId: 'io.ionic.starter',
-  appName: 'evilrussion',
+  appId: 'io.evilrussion',
+  appName: 'Evil Russion',
   webDir: 'www',
-  server: {
-    androidScheme: 'https'
-  }
 };
 
 export default config;

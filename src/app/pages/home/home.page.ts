@@ -7,6 +7,5 @@ import { StatsService } from 'src/app/services/stats.service';
   styleUrls: ['home.page.scss'],
 })
 export class HomePage {
-  constructor(public statsService: StatsService) {
-  }
+  constructor(public statsService: StatsService) {}
 }
